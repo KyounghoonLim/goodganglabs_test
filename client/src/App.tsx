@@ -25,7 +25,10 @@ function App() {
       <header className="App-header">
         <button onClick={() => setModalOn(!modalOn)}>modal test</button>
         <ModalPotal>
-          {modalOn && <UserNameInputModal user={user} setUser={setUser} />}
+          {modalOn && 
+          <UserNameInputModal 
+          user={user} setUser={setUser} modalClose={() => setModalOn(false)}
+          />}
         </ModalPotal>
       </header>
       {connection && <Connect user={user} />}

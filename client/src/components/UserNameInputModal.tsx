@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Modal from './Modal'
 
-export default function UserNameInputModal({user, setUser}: any) {
+export default function UserNameInputModal({user, setUser, modalClose}: any) {
   const [userName, setUserName] = useState('')
   const [roomName, setRoomName] = useState('')
   
@@ -20,7 +20,7 @@ export default function UserNameInputModal({user, setUser}: any) {
 
 
   return (
-    <Modal>
+    <Modal modalClose={modalClose}>
       <form className='user-name-form' onSubmit={submitHandler}>
         <label htmlFor="user-name-input">사용자명</label>
         <input type="text" id="user-name-input"

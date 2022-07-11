@@ -1,12 +1,13 @@
-import React from 'react';
+import React from 'react'
 
 export default function roomPage() {
-  const constraints = {
+  const media = navigator.mediaDevices.getUserMedia({
     audio: true,
-    video: false,
-  };
+    video: false
+  })
 
-  const user = navigator.mediaDevices.getUserMedia(constraints);
 
-  return <div>chattingRoomPage</div>;
+  return (
+    <div>roomPage</div>
+  )
 }
