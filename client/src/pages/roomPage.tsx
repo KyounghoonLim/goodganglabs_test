@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import {connectToSocket, createSender} from '../services/Connect'
 
-export default function roomPage() {
-  const media = navigator.mediaDevices.getUserMedia({
-    audio: true,
-    video: false
-  })
-
+export default function RoomPage({user}: any) {
+  useEffect(() => {
+    connectToSocket(user)
+    navigator.mediaDevices.getUserMedia({
+      audio: true,
+      video: false
+    })
+    .then(stream => {
+      console.log(stream)
+    })
+  }, [])
 
   return (
-    <div>roomPage</div>
+    <div>RoomPage</div>
   )
 }

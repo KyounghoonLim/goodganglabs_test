@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import ModalPotal from './components/ModalPotal';
 import UserNameInputModal from './components/UserNameInputModal';
-import Connect from './components/Connect';
+import RoomPage from './pages/RoomPage'
 
 function App() {
   const [modalOn, setModalOn] = useState(false)
@@ -24,6 +24,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <button onClick={() => setModalOn(!modalOn)}>modal test</button>
+        {connection && <RoomPage user={user} />}
         <ModalPotal>
           {modalOn && 
           <UserNameInputModal 
@@ -31,7 +32,6 @@ function App() {
           />}
         </ModalPotal>
       </header>
-      {connection && <Connect user={user} />}
     </div>
   );
 }
